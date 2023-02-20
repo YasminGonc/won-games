@@ -1,0 +1,29 @@
+import { StoryObj, Meta } from '@storybook/react'
+import { ShoppingCart } from 'phosphor-react'
+import { Button, ButtonProps } from '.'
+
+export default {
+  title: 'Button',
+  component: Button,
+  args: {
+    children: 'Buy now',
+    size: 'medium',
+    fullWidth: false
+  },
+  argTypes: {
+    icon: {
+      type: 'symbol'
+    }
+  }
+} as Meta<ButtonProps>
+
+export const Default: StoryObj<ButtonProps> = {}
+
+export const withIcon: StoryObj<ButtonProps> = {
+  render: (args) => (
+    <Button {...args}>
+      <ShoppingCart />
+      Buy now
+    </Button>
+  )
+}
