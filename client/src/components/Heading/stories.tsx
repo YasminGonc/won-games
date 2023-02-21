@@ -7,8 +7,10 @@ export default {
   args: {
     children: 'Most Popular',
     color: 'black',
+    size: 'medium',
     leftBorder: false,
-    bottomBorder: false
+    bottomBorder: false,
+    lineColor: 'primary'
   }
 } as Meta<HeadingProps>
 
