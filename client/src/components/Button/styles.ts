@@ -23,7 +23,7 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.button<ButtonProps>`
   ${({ theme, size, fullWidth }) => css`
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
@@ -40,6 +40,7 @@ export const Wrapper = styled.button<ButtonProps>`
     cursor: pointer;
 
     color: ${theme.colors.white};
+    text-decoration: none;
 
     ${!!size && wrapperModifiers[size](theme)};
     ${!!fullWidth && wrapperModifiers.fullWidth};

@@ -2,10 +2,10 @@
 
 exports[`<Button /> should render a medium button by default 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -21,6 +21,8 @@ exports[`<Button /> should render a medium button by default 1`] = `
   padding: 0.8rem;
   cursor: pointer;
   color: #FAFAFA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;

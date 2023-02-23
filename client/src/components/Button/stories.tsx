@@ -27,3 +27,12 @@ export const withIcon: StoryObj<ButtonProps> = {
     </Button>
   )
 }
+
+export const asLink: StoryObj<ButtonProps> = {
+  args: {
+    size: 'large',
+    as: 'a',
+    href: '/link',
+    fullWidth: false
+  }
+}
