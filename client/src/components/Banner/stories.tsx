@@ -9,11 +9,32 @@ export default {
     title: 'Defy death',
     subtitle: '<p>Play the new <strong>CrashLands</strong> season',
     buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death'
+    buttonLink: '/games/defy-death',
+    hasRibbon: false,
+    ribbon: 'My Ribbon',
+    ribbonSize: 'normal'
   },
   parameters: {
     layout: 'fullscreen'
   }
 } as Meta<BannerProps>
 
-export const Default: StoryObj<BannerProps> = {}
+export const Default: StoryObj<BannerProps> = {
+  render: (args) => (
+    <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
+}
+
+export const WithRibbon: StoryObj<BannerProps> = {
+  render: (args) => (
+    <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
+}
+
+WithRibbon.args = {
+  hasRibbon: true
+}

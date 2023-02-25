@@ -1,4 +1,5 @@
 import { Button } from '../Button'
+import { Ribbon, RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
 
 export type BannerProps = {
@@ -7,6 +8,10 @@ export type BannerProps = {
   subtitle: string
   buttonLabel: string
   buttonLink: string
+  hasRibbon?: boolean
+  ribbon?: string
+  ribbonSize?: RibbonSizes
+  ribbonColor?: RibbonColors
 }
 
 export function Banner({
@@ -14,10 +19,14 @@ export function Banner({
   title,
   subtitle,
   buttonLabel,
-  buttonLink
+  buttonLink,
+  hasRibbon = false,
+  ribbon,
+  ribbonSize = 'normal',
+  ribbonColor
 }: BannerProps) {
   return (
-    <S.Wrapper>
+    <S.Wrapper hasRibbon={hasRibbon}>
       <S.Img src={img} role="img" aria-label={title} />
 
       <S.Caption>
@@ -27,6 +36,12 @@ export function Banner({
           {buttonLabel}
         </Button>
       </S.Caption>
+
+      {hasRibbon && (
+        <Ribbon size={ribbonSize} color={ribbonColor}>
+          {ribbon}
+        </Ribbon>
+      )}
     </S.Wrapper>
   )
 }
