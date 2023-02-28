@@ -1,0 +1,32 @@
+import { renderWithTheme } from '../../utils/tests/helpers'
+import { screen } from '@testing-library/react'
+
+import { GameCard } from '.'
+
+const props = {
+  title: 'Population Zero',
+  developer: 'Rockstar Games',
+  img: '/img/population-zero.png',
+  price: '$215,00'
+}
+
+describe('<GameCard />', () => {
+  it('should render correctly', () => {
+    renderWithTheme(<GameCard {...props} />)
+
+    expect(
+      screen.getByRole('heading', { name: props.title })
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', { name: props.developer })
+    ).toBeInTheDocument()
+
+    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
+      'src',
+      props.img
+    )
+
+    expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
+  })
+})
