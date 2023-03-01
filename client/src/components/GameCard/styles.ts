@@ -1,7 +1,11 @@
 import styled, { css, DefaultTheme } from 'styled-components'
+import { GameCardProps } from '.'
 
-export const Wrapper = styled.article`
+type WrapperProps = Pick<GameCardProps, 'hasRibbon'>
+
+export const Wrapper = styled.article<WrapperProps>`
   ${({ theme }) => css`
+    position: relative;
     background-color: ${theme.colors.white};
     padding-bottom: ${theme.spacings.xxsmall};
   `}

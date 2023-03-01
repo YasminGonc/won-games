@@ -1,5 +1,6 @@
 import { HeartStraight, ShoppingCart } from 'phosphor-react'
 import { Button } from '../Button'
+import { Ribbon, RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
 
 export type GameCardProps = {
@@ -8,6 +9,12 @@ export type GameCardProps = {
   img: string
   price: string
   promotionPrice?: string
+  favorite?: boolean
+  onFav?: () => void
+  hasRibbon?: boolean
+  ribbon?: string
+  ribbonSize?: RibbonSizes
+  ribbonColor?: RibbonColors
 }
 
 export function GameCard({
@@ -15,10 +22,22 @@ export function GameCard({
   developer,
   img,
   price,
-  promotionPrice
+  promotionPrice,
+  favorite = false,
+  hasRibbon = false,
+  ribbon,
+  ribbonSize = 'small',
+  ribbonColor = 'primary',
+  onFav
 }: GameCardProps) {
   return (
-    <S.Wrapper>
+    <S.Wrapper hasRibbon={hasRibbon}>
+      {hasRibbon && (
+        <Ribbon size={ribbonSize} color={ribbonColor}>
+          {ribbon}
+        </Ribbon>
+      )}
+
       <S.ImageBox>
         <img src={img} alt={title} />
       </S.ImageBox>
@@ -29,8 +48,11 @@ export function GameCard({
           <S.Developer>{developer}</S.Developer>
         </S.Infos>
 
-        <S.FavButton role="button">
-          <HeartStraight aria-label="Add to wishlist" />
+        <S.FavButton role="button" onClick={onFav}>
+          <HeartStraight
+            aria-label={favorite ? 'Remove from wishlist' : 'Add to wishlist'}
+            weight={favorite ? 'fill' : 'regular'}
+          />
         </S.FavButton>
 
         <S.PriceBox>
