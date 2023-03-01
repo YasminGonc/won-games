@@ -1,6 +1,11 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-export const Wrapper = styled.article``
+export const Wrapper = styled.article`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+    padding-bottom: ${theme.spacings.xxsmall};
+  `}
+`
 
 export const ImageBox = styled.div`
   height: 14rem;
@@ -65,14 +70,18 @@ export const Developer = styled.h4`
 `
 
 export const FavButton = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
 
-  svg {
-    width: 2rem;
-    height: 2rem;
-  }
+    svg {
+      width: 2rem;
+      height: 2rem;
+      color: ${theme.colors.primary};
+    }
+  `}
 `
 
 export const PriceBox = styled.div`
@@ -92,11 +101,13 @@ type PriceProps = {
 const priceModifiers = {
   promotional: (theme: DefaultTheme) => css`
     color: ${theme.colors.gray};
+    text-decoration: line-through;
   `,
   default: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.secondary};
     border-radius: ${theme.border.radius};
     color: ${theme.colors.white};
+    font-weight: ${theme.font.bold};
     padding: 0 ${theme.spacings.xsmall};
   `
 }
@@ -105,7 +116,6 @@ export const Price = styled.div<PriceProps>`
   ${({ theme, isPromotional }) => css`
     display: inline-flex;
     align-items: center;
-    font-weight: ${theme.font.bold};
     height: 3rem;
 
     ${!isPromotional && priceModifiers.default(theme)}

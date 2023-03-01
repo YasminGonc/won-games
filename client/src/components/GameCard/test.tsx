@@ -29,4 +29,27 @@ describe('<GameCard />', () => {
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
+
+  it('should render prince in label', () => {
+    renderWithTheme(<GameCard {...props} />)
+
+    const price = screen.getByText(props.price)
+
+    expect(price).toHaveStyle({
+      backgroundColor: '#3CD3C1'
+    })
+    expect(price).not.toHaveStyle({ textDecoration: 'line-through' })
+  })
+
+  it('should render promotional price', () => {
+    renderWithTheme(<GameCard {...props} promotionPrice="$ 100,00" />)
+
+    expect(screen.getByText('$ 100,00')).toHaveStyle({
+      backgroundColor: '#3CD3C1'
+    })
+
+    expect(screen.getByText(props.price)).toHaveStyle({
+      textDecoration: 'line-through'
+    })
+  })
 })

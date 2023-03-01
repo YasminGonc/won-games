@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { GameCard, GameCardProps } from '.'
 
 export default {
-  title: 'GameCard',
+  title: 'Game Card',
   component: GameCard,
   args: {
     title: 'Population Zero',
@@ -18,4 +18,16 @@ export const Default: StoryObj<GameCardProps> = {
       <GameCard {...args} />
     </div>
   )
+}
+
+export const PromotionalCard: StoryObj<GameCardProps> = {
+  render: (args) => (
+    <div style={{ width: '30rem' }}>
+      <GameCard {...args} />
+    </div>
+  )
+}
+
+PromotionalCard.args = {
+  promotionPrice: '$ 100,00'
 }
