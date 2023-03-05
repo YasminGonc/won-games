@@ -7,7 +7,7 @@ export default {
   parameters: {
     layout: 'fullScreen',
     backgrounds: {
-      default: 'dark'
+      default: 'won-dark'
     }
   }
 } as Meta<MenuProps>
