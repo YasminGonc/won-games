@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Head>
-        <title>React Avançado - Boilerplate</title>
+        <title>Won Games</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -26,10 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
 
-        <meta
-          name="description"
-          content="A simple project to start to work with TypeScript, React, NextJS and Styled Components"
-        />
+        <meta name="description" content="The best Game Store in the world!" />
       </Head>
 
       <GlobalStyles />
