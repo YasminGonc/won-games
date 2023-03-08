@@ -8,7 +8,8 @@ export default {
   args: {
     children: 'Buy now',
     size: 'medium',
-    fullWidth: false
+    fullWidth: false,
+    minimal: false
   },
   argTypes: {
     icon: {
@@ -35,4 +36,17 @@ export const asLink: StoryObj<ButtonProps> = {
     href: '/link',
     fullWidth: false
   }
+}
+
+export const minimal: StoryObj<ButtonProps> = {
+  render: (args) => (
+    <Button {...args}>
+      <ShoppingCart />
+      Buy now
+    </Button>
+  )
+}
+
+minimal.args = {
+  minimal: true
 }

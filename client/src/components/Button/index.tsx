@@ -14,6 +14,7 @@ export type ButtonProps = {
   size?: 'small' | 'medium' | 'large'
   fullWidth?: boolean
   icon?: ReactNode
+  minimal?: boolean
   as?: ElementType
 } & ButtonTypes
 
@@ -22,10 +23,11 @@ export function Button({
   size = 'medium',
   fullWidth = false,
   icon,
+  minimal = false,
   ...props
 }: ButtonProps) {
   return (
-    <S.Wrapper size={size} fullWidth={fullWidth} {...props}>
+    <S.Wrapper size={size} fullWidth={fullWidth} minimal={minimal} {...props}>
       {icon}
       {children}
     </S.Wrapper>

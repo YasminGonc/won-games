@@ -1,3 +1,4 @@
+import { darken } from 'polished'
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ButtonProps } from '.'
 
@@ -18,11 +19,19 @@ const wrapperModifiers = {
   `,
   fullWidth: () => css`
     width: 100%;
+  `,
+  minimal: (theme: DefaultTheme) => css`
+    background: none;
+    color: ${theme.colors.primary};
+
+    &:hover {
+      color: ${darken(0.1, theme.colors.primary)};
+    }
   `
 }
 
 export const Wrapper = styled.button<ButtonProps>`
-  ${({ theme, size, fullWidth }) => css`
+  ${({ theme, size, fullWidth, minimal }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -44,9 +53,12 @@ export const Wrapper = styled.button<ButtonProps>`
 
     ${!!size && wrapperModifiers[size](theme)};
     ${!!fullWidth && wrapperModifiers.fullWidth};
+    ${!!minimal && wrapperModifiers.minimal(theme)}
 
     &:hover {
-      background: linear-gradient(180deg, #e35565 0%, #d958a6 100%);
+      background: ${minimal
+        ? 'none'
+        : `linear-gradient(180deg, #e35565 0%, #d958a6 100%)`};
     }
   `}
 `
