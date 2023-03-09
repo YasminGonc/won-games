@@ -13,6 +13,7 @@ export const Label = styled.label<LabelProps>`
     color: ${theme.colors[labelColor!]};
     font-size: ${theme.font.sizes.small};
     padding-left: ${theme.spacings.xsmall};
+    line-height: 1;
     cursor: pointer;
   `}
 `
@@ -20,19 +21,25 @@ export const Label = styled.label<LabelProps>`
 export const CheckboxRoot = styled(Checkbox.Root)`
   ${({ theme }) => css`
     display: flex;
-    align-items: end;
+    align-items: baseline;
     justify-content: center;
 
     background-color: transparent;
     border: 2px solid ${theme.colors.darkGray};
     border-radius: ${theme.border.radius};
 
-    width: ${theme.spacings.small};
-    height: ${theme.spacings.small};
+    width: 1.8rem;
+    height: 1.8rem;
     cursor: pointer;
+    transition: background-color border ${theme.transition.fast};
 
     &[data-state='checked'] {
       background-color: ${theme.colors.primary};
+      border-color: ${theme.colors.primary};
+    }
+
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.darkGray};
     }
   `}
 `
