@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { RadioGroup, RadioGroupProps } from '.'
 
 export default {
-  title: 'RadioGroup',
+  title: 'Form/RadioGroup',
   component: RadioGroup,
   args: {
     items: ['Cat', 'Dog', 'Fish']

@@ -6,7 +6,8 @@ export default {
   title: 'Form/TextField',
   component: TextField,
   args: {
-    placeholder: 'Name'
+    placeholder: 'Name',
+    disabled: false
   },
   argTypes: {
     icon: {
@@ -17,8 +18,18 @@ export default {
 
 export const Default: StoryObj<TextFieldProps> = {}
 
-export const WithIcon: StoryObj<TextFieldProps> = {}
+export const withIcon: StoryObj<TextFieldProps> = {}
 
-WithIcon.args = {
-  icon: <UserCircle />
+withIcon.args = {
+  icon: <UserCircle />,
+  iconPosition: 'left'
+}
+
+export const withError: StoryObj<TextFieldProps> = {}
+
+withError.args = {
+  icon: <UserCircle />,
+  iconPosition: 'left',
+  label: 'Name',
+  error: 'Ops... Something is weird'
 }
