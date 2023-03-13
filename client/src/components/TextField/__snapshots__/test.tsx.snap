@@ -9,6 +9,7 @@ exports[`<TextField /> should render an error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
 }
 
 .c0 .c1 {

@@ -25,6 +25,7 @@ export const Wrapper = styled.div<
   ${({ theme, disabled, error }) => css`
     display: inline-flex;
     flex-direction: column;
+    width: 100%;
 
     ${disabled && WrapeprModifier.disabled(theme)};
     ${!!error && WrapeprModifier.error(theme)}
