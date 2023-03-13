@@ -17,6 +17,9 @@ const wrapperModifiers = {
       font-size: ${theme.font.sizes.xxlarge};  
     `}
   `,
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.huge};
+  `,
   leftBorder: (theme: DefaultTheme, lineColor: LineColor) => css`
     border-left: 0.7rem solid ${theme.colors[lineColor]};
     padding-left: ${theme.spacings.xxsmall};

@@ -50,10 +50,6 @@ export const BannerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    ${HeadingStyles.Wrapper} {
-      font-size: 5.2rem;
-    }
   `}
 `
 

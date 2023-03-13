@@ -5,7 +5,7 @@ export type LineColor = 'primary' | 'secondary'
 export type HeadingProps = {
   children: string
   color?: 'white' | 'black'
-  size?: 'small' | 'medium'
+  size?: 'small' | 'medium' | 'huge'
   leftBorder?: boolean
   bottomBorder?: boolean
   lineColor?: LineColor
