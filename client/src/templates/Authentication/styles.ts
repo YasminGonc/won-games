@@ -50,6 +50,11 @@ export const BannerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    a {
+      width: fit-content;
+      height: fit-content;
+    }
   `}
 `
 
