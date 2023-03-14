@@ -5,10 +5,11 @@ import { Button } from '../Button'
 import { TextField } from '../TextField'
 
 import * as S from './styles'
+import { FormLink, FormWrapper } from '../FormWrapper'
 
 export function FormSignIn() {
   return (
-    <S.Wrapper>
+    <FormWrapper>
       <form>
         <TextField
           placeholder="Email"
@@ -30,11 +31,11 @@ export function FormSignIn() {
           Sign in now
         </Button>
 
-        <S.FormLink>
+        <FormLink>
           Don’t have an account?
           <Link href="/SignUp">Sign up</Link>
-        </S.FormLink>
+        </FormLink>
       </form>
-    </S.Wrapper>
+    </FormWrapper>
   )
 }

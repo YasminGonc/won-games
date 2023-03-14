@@ -102,14 +102,6 @@ exports[`<FormSignIn /> should render the form 1`] = `
   font-size: 1.4rem;
 }
 
-.c0 .c1 {
-  margin: 0.8rem 0;
-}
-
-.c0 .c6 {
-  margin: 3.2rem auto 1.6rem;
-}
-
 .c5 {
   display: block;
   color: #030517;
@@ -121,6 +113,14 @@ exports[`<FormSignIn /> should render the form 1`] = `
 
 .c5:hover {
   color: #0f1971;
+}
+
+.c0 .c1 {
+  margin: 0.8rem 0;
+}
+
+.c0 .c6 {
+  margin: 3.2rem auto 1.6rem;
 }
 
 .c8 {

@@ -1,13 +1,13 @@
-import { TextField } from '../TextField'
+import Link from 'next/link'
 import { UserCircle, EnvelopeSimple, LockSimple } from 'phosphor-react'
 
-import * as S from './styles'
 import { Button } from '../Button'
-import Link from 'next/link'
+import { TextField } from '../TextField'
+import { FormLink, FormWrapper } from '../FormWrapper'
 
 export function FormSignUp() {
   return (
-    <S.Wrapper>
+    <FormWrapper>
       <form>
         <TextField
           placeholder="Name"
@@ -41,11 +41,11 @@ export function FormSignUp() {
           Sign up now
         </Button>
 
-        <S.FormLink>
+        <FormLink>
           Already have an account?
           <Link href="/SignIn">Sign in</Link>
-        </S.FormLink>
+        </FormLink>
       </form>
-    </S.Wrapper>
+    </FormWrapper>
   )
 }
