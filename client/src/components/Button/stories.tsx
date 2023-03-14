@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 import { ShoppingCart } from 'phosphor-react'
-import { Button, ButtonProps } from '.'
+import Button, { ButtonProps } from '.'
 
 export default {
   title: 'Button',

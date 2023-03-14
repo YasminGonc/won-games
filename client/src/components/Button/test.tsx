@@ -2,7 +2,7 @@ import { renderWithTheme } from '../../utils/tests/helpers'
 import { screen } from '@testing-library/react'
 import { ShoppingCart } from 'phosphor-react'
 
-import { Button } from '.'
+import Button from '.'
 
 describe('<Button />', () => {
   it('should render a medium button by default', () => {

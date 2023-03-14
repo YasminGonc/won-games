@@ -262,7 +262,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
         >
           Don’t have an account?
           <a
-            href="/SignUp"
+            href="/signUp"
           >
             Sign up
           </a>

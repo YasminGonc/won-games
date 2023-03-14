@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { EnvelopeSimple, LockSimple } from 'phosphor-react'
 
-import { Button } from '../Button'
+import Button from '../Button'
 import { TextField } from '../TextField'
 
 import * as S from './styles'
@@ -33,7 +33,7 @@ export function FormSignIn() {
 
         <FormLink>
           Don’t have an account?
-          <Link href="/SignUp">Sign up</Link>
+          <Link href="/signUp">Sign up</Link>
         </FormLink>
       </form>
     </FormWrapper>

@@ -1,5 +1,5 @@
 import { HeartStraight, ShoppingCart } from 'phosphor-react'
-import { Button } from '../Button'
+import Button from '../Button'
 import { Ribbon, RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
 
