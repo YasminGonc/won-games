@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import { useState } from 'react'
 import * as S from './styles'
 
 import { List, MagnifyingGlass, ShoppingCart, X } from 'phosphor-react'
 import { Logo } from '../Logo'
-import { Button } from '../Button'
+import Button from '../Button'
 import { MediaMatch } from '../MediaMatch'
 
 export type MenuProps = {
@@ -42,7 +43,9 @@ export function Menu({ username }: MenuProps) {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href="/signIn" passHref legacyBehavior>
+              <Button as="a">Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -64,9 +67,11 @@ export function Menu({ username }: MenuProps) {
 
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="large">
-              Login
-            </Button>
+            <Link href="/signIn" passHref legacyBehavior>
+              <Button as="a" fullWidth size="large">
+                Sign in
+              </Button>
+            </Link>
             <span>or</span>
             <S.CreateAccount href="#" title="Sign up">
               Sign Up

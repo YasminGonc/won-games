@@ -31,6 +31,7 @@ export const MenuGroup = styled.div`
     align-items: center;
     justify-content: flex-end;
     gap: ${theme.spacings.xsmall};
+    z-index: ${theme.layers.menu} + 1;
   `}
 `
 type MenuFullProps = {
@@ -54,6 +55,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
+    z-index: ${theme.layers.alwaysOnTop};
 
     > svg {
       cursor: pointer;
