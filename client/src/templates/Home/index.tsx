@@ -35,7 +35,7 @@ export function Home({
   freeHighlight
 }: HomeTemplateProps) {
   return (
-    <section>
+    <S.Wrapper>
       <Container>
         <Menu />
         <S.SectionBanner>
@@ -92,6 +92,6 @@ export function Home({
           <Footer />
         </Container>
       </S.SectionFooter>
-    </section>
+    </S.Wrapper>
   )
 }
