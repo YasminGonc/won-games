@@ -2,15 +2,13 @@ import * as S from './styles'
 
 import { HighlightProps, Highlight } from '../../components/Highlight'
 import { Heading } from '../../components/Heading'
-import {
-  GameCardSlider,
-  GameCardSliderProps
-} from '../../components/GameCardSlider'
+import { GameCardSlider } from '../../components/GameCardSlider'
+import { GameCardProps } from '../GameCard'
 
 export type ShowCaseProps = {
   title?: string
   highlight?: HighlightProps
-  games?: GameCardSliderProps
+  games?: GameCardProps[]
 }
 
 export function ShowCase({ title, highlight, games }: ShowCaseProps) {
@@ -24,7 +22,7 @@ export function ShowCase({ title, highlight, games }: ShowCaseProps) {
 
       {!!highlight && <Highlight {...highlight} />}
 
-      {!!games && <GameCardSlider {...games} />}
+      {!!games && <GameCardSlider items={games} />}
     </S.Wrapper>
   )
 }

@@ -27,27 +27,21 @@ export const Default: StoryObj<ShowCaseProps> = {}
 Default.args = {
   title: 'Most Popular',
   highlight: highlightMock,
-  games: {
-    items: gamesMock
-  }
+  games: gamesMock
 }
 
 export const WithoutTitle: StoryObj<ShowCaseProps> = {}
 
 WithoutTitle.args = {
   highlight: highlightMock,
-  games: {
-    items: gamesMock
-  }
+  games: gamesMock
 }
 
 export const WithoutHighlight: StoryObj<ShowCaseProps> = {}
 
 WithoutHighlight.args = {
   title: 'Most Popular',
-  games: {
-    items: gamesMock
-  }
+  games: gamesMock
 }
 
 export const WithoutGames: StoryObj<ShowCaseProps> = {}

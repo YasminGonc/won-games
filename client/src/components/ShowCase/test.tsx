@@ -10,9 +10,7 @@ import gamesMock from '../../components/GameCardSlider/mock'
 const props: ShowCaseProps = {
   title: 'Most Popular',
   highlight: highlightMock,
-  games: {
-    items: gamesMock.slice(0, 1)
-  }
+  games: gamesMock.slice(0, 1)
 }
 
 describe('<ShowCase />', () => {
