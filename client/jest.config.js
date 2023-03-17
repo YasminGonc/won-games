@@ -12,7 +12,12 @@ const customJestConfig = {
   testPathIgnorePatterns: ['/node_modules', '/.next/'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts(x)?', '!src/**/*.stories.tsx']
+  collectCoverageFrom: [
+    'src/**/*.ts(x)?',
+    '!src/**/stories.tsx',
+    '!src/pages/**/*.tsx',
+    '!src/styles/**/*.ts'
+  ]
 }
 
 module.exports = createJestConfig(customJestConfig)
