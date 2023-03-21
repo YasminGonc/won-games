@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GameInfo /> should render game informations 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.6rem;
+  color: #FAFAFA;
+  font-weight: 600;
+  height: 3.6rem;
+  padding: 0 2.4rem;
+  right: -2rem;
+  font-size: 1.4rem;
+  background-color: #3CD3C1;
+}
+
+.c3::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-width: 1rem;
+}
+
+.c3::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
+}
+
+.c3::before {
+  border-left-color: #1f8a7d;
+  border-top-color: #1f8a7d;
+}
+
+.c0 {
+  position: relative;
+  background-color: #FAFAFA;
+  padding: 2.4rem;
+}
+
+.c0 .c2 {
+  right: -1rem;
+}
+
+.c0 .c2:before {
+  border-right-width: 1rem;
+}
+
+.c4 {
+  color: #8F8F8F;
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 > button {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: linear-gradient( 178.59deg, #ff5f5f -14.51%, #f062c0 102.86%, #f23131 102.86% );
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  color: #FAFAFA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+}
+
+.c6:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 100%);
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: linear-gradient( 178.59deg, #ff5f5f -14.51%, #f062c0 102.86%, #f23131 102.86% );
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  color: #FAFAFA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+  background: none;
+  color: #F231A5;
+}
+
+.c7:hover {
+  color: #e20e8d;
+}
+
+.c7:hover {
+  background: none;
+}
+
+.c1 {
+  color: #030517;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 3.2rem;
+  font-size: 2.0rem;
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 5rem;
+  border-bottom: 0.5rem solid #F231A5;
+}
+
+@media (min-width:768px) {
+  .c0 .c2 {
+    right: 2.4rem;
+    top: 2.4rem;
+    font-size: 1.8rem;
+  }
+
+  .c0 .c2:before {
+    border: none;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    max-width: 77rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  .c5 > button {
+    width: initial;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 2.8rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+    color="black"
+  >
+    My Game Title
+  </h2>
+  <div
+    class="c2 c3"
+    color="secondary"
+  >
+    $210
+  </div>
+  <p
+    class="c4"
+  >
+    Game description
+  </p>
+  <div
+    class="c5"
+  >
+    <button
+      class="c6"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 256 256"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <path
+          d="M184,184H69.8L41.9,30.6A8,8,0,0,0,34.1,24H16"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+        <circle
+          cx="80"
+          cy="204"
+          fill="none"
+          r="20"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+        <circle
+          cx="184"
+          cy="204"
+          fill="none"
+          r="20"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+        <path
+          d="M62.5,144H188.1a15.9,15.9,0,0,0,15.7-13.1L216,64H48"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+      </svg>
+      Add to cart
+    </button>
+    <button
+      class="c7"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 256 256"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="none"
+          height="256"
+          width="256"
+        />
+        <path
+          d="M133.7,211.9l81-81c19.9-20,22.8-52.7,4-73.6a52,52,0,0,0-75.5-2.1L128,70.5,114.9,57.3c-20-19.9-52.7-22.8-73.6-4a52,52,0,0,0-2.1,75.5l83.1,83.1A8.1,8.1,0,0,0,133.7,211.9Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        />
+      </svg>
+      Wishlist
+    </button>
+  </div>
+</div>
+`;
