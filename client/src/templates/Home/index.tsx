@@ -2,10 +2,9 @@ import { BannerProps } from '../../components/Banner'
 import { GameCardProps } from '../../components/GameCard'
 import { HighlightProps } from '../../components/Highlight'
 
+import { Base } from '../Base'
 import { BannerSlider } from '../../components/BannerSlider'
 import { Container } from '../../components/Container'
-import { Footer } from '../../components/Footer'
-import { Menu } from '../../components/Menu'
 import { ShowCase } from '../../components/ShowCase'
 
 import * as S from './styles'
@@ -35,39 +34,34 @@ export function Home({
 }: HomeTemplateProps) {
   return (
     <S.Wrapper>
-      <Container>
-        <Menu />
-        <S.SectionBanner>
-          <BannerSlider items={banners} />
-        </S.SectionBanner>
-      </Container>
-
-      <S.SectionNews>
-        <ShowCase title="News" games={newGames} />
-      </S.SectionNews>
-
-      <ShowCase
-        title="Most Popular"
-        highlight={mostPopularHighlight}
-        games={mostPopularGames}
-      />
-
-      <S.SectionUpcoming>
-        <ShowCase title="Upcoming" games={upcomingGames} />
-        <ShowCase highlight={upcomingHighlight} games={upcomingMoreGames} />
-      </S.SectionUpcoming>
-
-      <ShowCase
-        title="Free games"
-        highlight={freeHighlight}
-        games={freeGames}
-      />
-
-      <S.SectionFooter>
+      <Base>
         <Container>
-          <Footer />
+          <S.SectionBanner>
+            <BannerSlider items={banners} />
+          </S.SectionBanner>
         </Container>
-      </S.SectionFooter>
+
+        <S.SectionNews>
+          <ShowCase title="News" games={newGames} />
+        </S.SectionNews>
+
+        <ShowCase
+          title="Most Popular"
+          highlight={mostPopularHighlight}
+          games={mostPopularGames}
+        />
+
+        <S.SectionUpcoming>
+          <ShowCase title="Upcoming" games={upcomingGames} />
+          <ShowCase highlight={upcomingHighlight} games={upcomingMoreGames} />
+        </S.SectionUpcoming>
+
+        <ShowCase
+          title="Free games"
+          highlight={freeHighlight}
+          games={freeGames}
+        />
+      </Base>
     </S.Wrapper>
   )
 }
