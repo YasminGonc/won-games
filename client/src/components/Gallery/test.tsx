@@ -76,5 +76,3 @@ describe('<Gallery />', () => {
     expect(modal).toHaveStyle({ opacity: 0 })
   })
 })
-
-// teste de fechar o modal
