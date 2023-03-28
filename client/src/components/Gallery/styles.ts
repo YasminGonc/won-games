@@ -3,15 +3,6 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    ${media.lessThan('huge')`
-        overflow-x: hidden;
-    `}
-
-    .slick-track,
-    .slick-list {
-      display: flex;
-    }
-
     .slick-prev,
     .slick-next {
       display: block;
@@ -24,42 +15,42 @@ export const Wrapper = styled.div`
       padding: 0;
       transform: translate(0, -50%);
     }
-
     .slick-prev {
       left: -${theme.spacings.xxlarge};
     }
-
     .slick-next {
       right: -${theme.spacings.xxlarge};
     }
-
     .slick-prev.slick-disabled,
     .slick-next.slick-disabled {
       visibility: hidden;
     }
-
     .slick-slide > div {
-      margin: 0 ${theme.spacings.xxsmall};
+      margin: 0 ${theme.spacings.xsmall};
       cursor: pointer;
     }
-
     .slick-list {
-      margin: 0 -${theme.spacings.xxsmall};
+      margin: 0 -${theme.spacings.xsmall};
     }
+    ${media.lessThan('huge')`
+      overflow-x: hidden;
+    `}
   `}
 `
+
+type ModalProps = {
+  isOpen: boolean
+}
 
 const modalModifiers = {
   open: () => css`
     opacity: 1;
   `,
+
   close: () => css`
     opacity: 0;
     pointer-events: none;
   `
-}
-type ModalProps = {
-  isOpen: boolean
 }
 
 export const Modal = styled.div<ModalProps>`
@@ -71,10 +62,10 @@ export const Modal = styled.div<ModalProps>`
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
+    justify-content: center;
     align-items: center;
     z-index: ${theme.layers.modal};
     transition: opacity ${theme.transition.default};
-
     ${isOpen && modalModifiers.open()}
     ${!isOpen && modalModifiers.close()}
   `}
@@ -91,4 +82,9 @@ export const Close = styled.div`
     height: 100%;
     text-align: right;
   `}
+`
+
+export const Content = styled.div`
+  max-width: min(120rem, 100%);
+  max-height: 80rem;
 `

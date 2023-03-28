@@ -10,11 +10,11 @@ describe('<Gallery />', () => {
     renderWithTheme(<Gallery items={GalleryMock.slice(0, 2)} />)
 
     expect(
-      screen.getByRole('button', { name: /Gallery Image 1/i })
+      screen.getByRole('button', { name: /Thumb - Gallery Image 1/i })
     ).toHaveAttribute('src', GalleryMock[0].src)
 
     expect(
-      screen.getByRole('button', { name: /Gallery Image 2/i })
+      screen.getByRole('button', { name: /Thumb - Gallery Image 2/i })
     ).toHaveAttribute('src', GalleryMock[1].src)
   })
 
@@ -26,9 +26,24 @@ describe('<Gallery />', () => {
     expect(modal.getAttribute('aria-hidden')).toBe('true')
     expect(modal).toHaveStyle({ opacity: 0 })
 
-    fireEvent.click(screen.getByRole('button', { name: /Gallery Image 1/i }))
+    fireEvent.click(
+      screen.getByRole('button', { name: /Thumb - Gallery Image 1/i })
+    )
     expect(modal.getAttribute('aria-hidden')).toBe('false')
     expect(modal).toHaveStyle({ opacity: 1 })
+  })
+
+  it('should handle open modal with selected image', async () => {
+    renderWithTheme(<Gallery items={GalleryMock.slice(0, 2)} />)
+
+    // clicar na thumbnail
+    fireEvent.click(
+      screen.getByRole('button', { name: /Thumb - Gallery Image 2/i })
+    )
+
+    // espero que a imagem da thumbnail esteja aberta
+    const img = await screen.findByRole('img', { name: /Gallery Image 2/i })
+    expect(img.parentElement?.parentElement).toHaveClass('slick-active')
   })
 
   it('should handle close modal when overlay or button clicked', () => {
@@ -45,7 +60,7 @@ describe('<Gallery />', () => {
     expect(modal).toHaveStyle({ opacity: 0 })
   })
 
-  it('should handle close modal when press esc', () => {
+  it('should handle close modal when esc is pressed', () => {
     const { container } = renderWithTheme(
       <Gallery items={GalleryMock.slice(0, 2)} />
     )
@@ -53,9 +68,13 @@ describe('<Gallery />', () => {
     const modal = screen.getByLabelText('modal')
 
     // clicar no botão de abrir o modal e verificar se ele abriu
-    fireEvent.keyUp(container, { key: 'Escape' })
+    fireEvent.click(screen.getByRole('button', { name: /Gallery Image 1/i }))
 
+    // clicar para fechar o modal
+    fireEvent.keyUp(container, { key: 'Escape' })
     expect(modal.getAttribute('aria-hidden')).toBe('true')
     expect(modal).toHaveStyle({ opacity: 0 })
   })
 })
+
+// teste de fechar o modal

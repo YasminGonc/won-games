@@ -1,6 +1,7 @@
-import { KeyboardEvent, useEffect, useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { CaretLeft, CaretRight, X } from 'phosphor-react'
-import { Slider, SliderSettings } from '../Slider'
+import SlickSlider from 'react-slick'
+import Slider, { SliderSettings } from '../Slider'
 import * as S from './styles'
 
 export type GalleryImageProps = {
@@ -12,13 +13,17 @@ export type GalleryProps = {
   items: GalleryImageProps[]
 }
 
-const settings: SliderSettings = {
+const commonSettings: SliderSettings = {
   arrows: true,
   infinite: false,
   lazyLoad: 'ondemand',
-  slidesToShow: 4,
   nextArrow: <CaretRight aria-label="Next image" />,
-  prevArrow: <CaretLeft aria-label="Previous image" />,
+  prevArrow: <CaretLeft aria-label="Previous image" />
+}
+
+const settings: SliderSettings = {
+  ...commonSettings,
+  slidesToShow: 4,
   responsive: [
     {
       breakpoint: 1375,
@@ -47,28 +52,37 @@ const settings: SliderSettings = {
   ]
 }
 
+const modalSettings: SliderSettings = {
+  ...commonSettings,
+  slidesToShow: 1
+}
+
 export function Gallery({ items }: GalleryProps) {
+  const slider = useRef<SlickSlider>(null)
   const [isOpen, setIsOpen] = useState(false)
 
-  // useEffect(() => {
-  //   const handleKeyUp = (e: KeyboardEvent) => {
-  //     e.key === 'Escape' && setIsOpen(false)
-  //   }
+  useEffect(() => {
+    const handleKeyUp = ({ key }: KeyboardEvent) => {
+      key === 'Escape' && setIsOpen(false)
+    }
 
-  //   window.addEventListener('keyup', handleKeyUp)
-  //   return () => window.removeEventListener('keyup', handleKeyUp)
-  // }, [])
+    window.addEventListener('keyup', handleKeyUp)
+    return () => window.removeEventListener('keyup', handleKeyUp)
+  }, [])
 
   return (
     <S.Wrapper>
-      <Slider settings={settings}>
-        {items.map((item) => (
+      <Slider ref={slider} settings={settings}>
+        {items.map((item, index) => (
           <img
             role="button"
             src={item.src}
-            alt={item.label}
-            key={item.src}
-            onClick={() => setIsOpen(true)}
+            alt={`Thumb - ${item.label}`}
+            key={`thumb-${index}`}
+            onClick={() => {
+              setIsOpen(true)
+              slider.current!.slickGoTo(index, true)
+            }}
           />
         ))}
       </Slider>
@@ -81,6 +95,18 @@ export function Gallery({ items }: GalleryProps) {
         >
           <X size={40} />
         </S.Close>
+
+        <S.Content>
+          <Slider ref={slider} settings={modalSettings}>
+            {items.map((item) => (
+              <img
+                src={item.src}
+                alt={item.label}
+                key={`Gallery-${item.src}`}
+              />
+            ))}
+          </Slider>
+        </S.Content>
       </S.Modal>
     </S.Wrapper>
   )
