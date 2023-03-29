@@ -2,14 +2,9 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 import * as HeadingStyles from '../../components/Heading/styles'
-import * as MenuStyles from '../../components/Menu/styles'
 import * as GameCardSliderStyles from '../../components/GameCardSlider/styles'
 
-export const Wrapper = styled.section`
-  ${MenuStyles.MenuFull} {
-    margin: 0 -1.6rem;
-  }
-`
+export const Wrapper = styled.section``
 
 export const SectionBanner = styled.section`
   ${({ theme }) => css`
