@@ -1,11 +1,16 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import * as MenuStyles from '../../components/Menu/styles'
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+
+  ${MenuStyles.MenuFull} {
+    margin: 0 -1.6rem;
+  }
 `
 
 export const Content = styled.div`

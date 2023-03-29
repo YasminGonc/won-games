@@ -7,6 +7,7 @@ export const Wrapper = styled.menu`
     align-items: center;
     padding: ${theme.spacings.small} 0;
     position: relative;
+    z-index: ${theme.layers.menu};
   `}
 `
 export const LogoWrapper = styled.div`
@@ -32,6 +33,10 @@ export const MenuGroup = styled.div`
     justify-content: flex-end;
     gap: ${theme.spacings.xsmall};
     z-index: ${theme.layers.menu} + 1;
+
+    > div {
+      margin-left: ${theme.spacings.xsmall};
+    }
   `}
 `
 type MenuFullProps = {
