@@ -37,6 +37,18 @@ describe('<GameDetails />', () => {
     expect(screen.getByLabelText(/mac/i)).toBeInTheDocument()
   })
 
+  it('should render the developer', () => {
+    renderWithTheme(<GameDetails {...GameDetailsMock} />)
+
+    expect(screen.getByText(/Gearbox Software/i)).toBeInTheDocument()
+  })
+
+  it('should render the publisher', () => {
+    renderWithTheme(<GameDetails {...GameDetailsMock} />)
+
+    expect(screen.getByText(/2K/i)).toBeInTheDocument()
+  })
+
   it('should render a formated date', () => {
     renderWithTheme(<GameDetails {...GameDetailsMock} />)
 
