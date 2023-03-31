@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import { Container } from '@/components/Container'
+import { Container } from '../../components/Container'
 
 export const Main = styled.main`
   margin-top: 20rem;
 
   ${media.greaterThan('medium')`
-     margin-top: 58rem;
+     margin-top: 38rem;
   `}
 `
 type CoverProps = {
@@ -44,3 +44,26 @@ const Section = styled(Container).attrs({ as: 'section' })`
 `
 
 export const SectionGameInfo = styled(Section)``
+
+export const SectionGallery = styled(Section)`
+  display: none;
+
+  ${media.greaterThan('medium')`
+    display: block;
+  `}
+`
+
+export const SectionDescription = styled(Section)``
+
+export const SectionGameDetails = styled(Section)`
+  ${({ theme }) => css`
+    > div {
+      padding-bottom: ${theme.spacings.xlarge};
+      border-bottom: 0.1rem solid rgba(181, 181, 181, 0.3);
+
+      ${media.greaterThan('medium')`
+        padding-bottom: calc(${theme.spacings.xxlarge} * 2);
+      `}
+    }
+  `}
+`

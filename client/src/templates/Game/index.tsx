@@ -1,13 +1,34 @@
 import * as S from './styles'
 import { Base } from '../Base'
-import { GameInfo, GameInfoProps } from '@/components/GameInfo'
+import { GameInfo, GameInfoProps } from '../../components/GameInfo'
+import { Gallery, GalleryImageProps } from '../../components/Gallery'
+import { TextContent } from '../../components/TextContent'
+import { GameDetails, GameDetailsProps } from '../../components/GameDetails'
+import { GameCardProps } from '../../components/GameCard'
+import { HighlightProps } from '../../components/Highlight'
+import { ShowCase } from '../../components/ShowCase'
 
 export type GameTemplateProps = {
   cover: string
   gameInfo: GameInfoProps
+  gallery?: GalleryImageProps[]
+  description: string
+  details: GameDetailsProps
+  upcomingGames: GameCardProps[]
+  upcomingHighlight: HighlightProps
+  recommendeGames: GameCardProps[]
 }
 
-export function Game({ cover, gameInfo }: GameTemplateProps) {
+export function Game({
+  cover,
+  gameInfo,
+  gallery,
+  description,
+  details,
+  upcomingGames,
+  upcomingHighlight,
+  recommendeGames
+}: GameTemplateProps) {
   return (
     <Base>
       <S.Cover src={cover} role="image" aria-label="cover" />
@@ -16,6 +37,26 @@ export function Game({ cover, gameInfo }: GameTemplateProps) {
         <S.SectionGameInfo>
           <GameInfo {...gameInfo} />
         </S.SectionGameInfo>
+
+        <S.SectionGallery>
+          {!!gallery && <Gallery items={gallery} />}
+        </S.SectionGallery>
+
+        <S.SectionDescription>
+          <TextContent title="Description" content={description} />
+        </S.SectionDescription>
+
+        <S.SectionGameDetails>
+          <GameDetails {...details} />
+        </S.SectionGameDetails>
+
+        <ShowCase
+          title="Upcoming"
+          games={upcomingGames}
+          highlight={upcomingHighlight}
+        />
+
+        <ShowCase title="You may like this games" games={recommendeGames} />
       </S.Main>
     </Base>
   )
