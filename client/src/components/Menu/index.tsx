@@ -23,12 +23,17 @@ export function Menu({ username }: MenuProps) {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Logo hideOnMobile />
+        <Link href="/">
+          <Logo hideOnMobile />
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
+
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
@@ -54,7 +59,9 @@ export function Menu({ username }: MenuProps) {
         <X size={24} aria-label="Close Menu" onClick={() => setIsOpen(false)} />
 
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
           <S.MenuLink href="#">Explore</S.MenuLink>
 
           {!!username && (
