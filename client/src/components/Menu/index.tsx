@@ -23,8 +23,10 @@ export function Menu({ username }: MenuProps) {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Link href="/">
-          <Logo hideOnMobile />
+        <Link href="/" legacyBehavior>
+          <a>
+            <Logo hideOnMobile />
+          </a>
         </Link>
       </S.LogoWrapper>
 
