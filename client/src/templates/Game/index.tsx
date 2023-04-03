@@ -1,5 +1,7 @@
 import * as S from './styles'
 import { Base } from '../Base'
+import { Divider } from '../../components/Divider'
+
 import { GameInfo, GameInfoProps } from '../../components/GameInfo'
 import { Gallery, GalleryImageProps } from '../../components/Gallery'
 import { TextContent } from '../../components/TextContent'
@@ -48,6 +50,7 @@ export function Game({
 
         <S.SectionGameDetails>
           <GameDetails {...details} />
+          <Divider />
         </S.SectionGameDetails>
 
         <ShowCase
