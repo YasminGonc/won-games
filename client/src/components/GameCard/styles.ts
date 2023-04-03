@@ -6,8 +6,11 @@ type WrapperProps = Pick<GameCardProps, 'hasRibbon'>
 export const Wrapper = styled.article<WrapperProps>`
   ${({ theme }) => css`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     background-color: ${theme.colors.white};
-    padding-bottom: ${theme.spacings.xxsmall};
   `}
 `
 
