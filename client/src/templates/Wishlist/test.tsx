@@ -8,7 +8,6 @@ import HighlighMock from '../../components/Highlight/mock'
 import GameCardSliderMock from '../../components/GameCardSlider/mock'
 
 const props: WishlistTemplateProps = {
-  games: GameCardSliderMock,
   recomendedGames: GameCardSliderMock,
   recomendedHighlight: HighlighMock
 }
@@ -24,7 +23,7 @@ jest.mock('../../components/ShowCase', () => {
 
 describe('<Wishlist />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Wishlist {...props} />)
+    renderWithTheme(<Wishlist {...props} games={GameCardSliderMock} />)
 
     expect(
       screen.getByRole('heading', { name: /Wishlist/i })
@@ -32,5 +31,15 @@ describe('<Wishlist />', () => {
 
     expect(screen.getAllByText(/population zero/i)).toHaveLength(6)
     expect(screen.getByTestId('Mock ShowCase')).toBeInTheDocument()
+  })
+
+  it('should render empty when there are no games', () => {
+    renderWithTheme(<Wishlist {...props} />)
+
+    expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', { name: /Your wishlist is empty/i })
+    ).toBeInTheDocument()
   })
 })
