@@ -1,6 +1,6 @@
 import { Wishlist, WishlistTemplateProps } from '../templates/Wishlist'
 
-import GameCardSliderMock from '@/components/GameCardSlider/mock'
+import GameCardSliderMock from '../components/GameCardSlider/mock'
 import HighlighMock from '../components/Highlight/mock'
 
 export default function WishlistPage(props: WishlistTemplateProps) {
