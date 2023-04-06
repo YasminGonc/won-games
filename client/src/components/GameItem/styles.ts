@@ -52,10 +52,20 @@ export const Title = styled.h3`
     color: ${theme.colors.black};
     margin-bottom: ${theme.spacings.xxsmall};
 
+    display: flex;
+    align-items: center;
+
     ${media.greaterThan('medium')`
         font-size: 2rem;
         line-height: 2rem;
     `}
+  `}
+`
+
+export const DownloadLink = styled.a`
+  ${({ theme }) => css`
+    color: ${theme.colors.primary};
+    margin-left: ${theme.spacings.xxsmall};
   `}
 `
 
@@ -69,3 +79,7 @@ export const Price = styled.p`
     font-weight: ${theme.font.bold};
   `}
 `
+
+export const PaymentContent = styled.div``
+
+export const CardInfo = styled.div``
