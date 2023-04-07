@@ -80,6 +80,30 @@ export const Price = styled.p`
   `}
 `
 
-export const PaymentContent = styled.div``
+export const PaymentContent = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    margin-top: ${theme.spacings.xsmall};
+    min-width: 28rem;
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.small};
 
-export const CardInfo = styled.div``
+    ${media.greaterThan('medium')`
+      margin-top: 0;
+      flex: 1;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-end;
+    `}
+  `}
+`
+
+export const CardInfo = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacings.xxsmall};
+    margin-top: ${theme.spacings.xsmall};
+  `}
+`

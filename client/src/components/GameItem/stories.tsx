@@ -22,5 +22,11 @@ export const Default: StoryObj<GameItemProps> = {}
 export const WithPayment: StoryObj<GameItemProps> = {}
 
 WithPayment.args = {
-  downloadLink: 'https://link'
+  downloadLink: 'https://link',
+  paymentInfo: {
+    flag: 'mastercard',
+    img: '/img/mastercard.png',
+    number: '**** **** **** 4326',
+    purchaseDate: 'Purchase made on 07/20/2022 at 20:32'
+  }
 }

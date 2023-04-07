@@ -49,7 +49,7 @@ export function GameItem({
 
       {!!paymentInfo && (
         <S.PaymentContent>
-          <div>{paymentInfo.purchaseDate}</div>
+          <p>{paymentInfo.purchaseDate}</p>
           <S.CardInfo>
             <span>{paymentInfo.number}</span>
             <img src={paymentInfo.img} alt={paymentInfo.flag} />
