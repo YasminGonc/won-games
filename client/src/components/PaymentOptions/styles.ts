@@ -1,17 +1,49 @@
 import styled, { css } from 'styled-components'
-
+import media from 'styled-media-query'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.white};
+  `}
+`
 
-export const Body = styled.div``
+export const Body = styled.div`
+  ${({ theme }) => css`
+    padding: ${theme.spacings.xsmall} ${theme.spacings.small} 0
+      ${theme.spacings.small};
+  `}
+`
 
 export const CardItem = styled.div``
 
-// Cards List
-export const RadioGroupRoot = styled(RadioGroup.Root)``
+export const RadioGroupRoot = styled(RadioGroup.Root)`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.spacings.xsmall};
+  `}
+`
 
-export const ItemWrapper = styled.div``
+export const ItemWrapper = styled.div`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.lightGray};
+    padding: ${theme.spacings.xxsmall};
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `}
+`
+
+export const Label = styled.label`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacings.xsmall};
+    cursor: pointer;
+  `}
+`
 
 export const RadioGroupItem = styled(RadioGroup.Item)`
   ${({ theme }) => css`
@@ -54,8 +86,30 @@ export const RadioGroupIndicator = styled(RadioGroup.Indicator)`
   `}
 `
 
-export const CardInfo = styled.div``
+export const AddCard = styled(ItemWrapper)`
+  ${({ theme }) => css`
+    justify-content: left;
+    margin-top: ${theme.spacings.xsmall};
+    cursor: pointer;
 
-export const AddCard = styled.div``
+    svg {
+      margin-right: ${theme.spacings.xsmall};
+    }
+  `}
+`
 
-export const Footer = styled.div``
+export const Footer = styled.div`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.lightGray};
+    margin-top: ${theme.spacings.large};
+    padding: ${theme.spacings.xsmall} ${theme.spacings.small};
+
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.spacings.xsmall};
+
+    ${media.greaterThan('medium')`
+      flex-direction: row;
+    `}
+  `}
+`

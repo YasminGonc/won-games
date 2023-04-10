@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import * as S from './styles'
 import { Plus, ShoppingCart } from 'phosphor-react'
 import { Heading } from '../Heading'
@@ -15,6 +16,12 @@ export type PaymentOptionProps = {
 }
 
 export function PaymentOption({ cards, handlePayment }: PaymentOptionProps) {
+  const [value, setValue] = useState('')
+
+  function handleValueChange(value: string) {
+    setValue(value)
+  }
+
   return (
     <S.Wrapper>
       <S.Body>
@@ -23,16 +30,20 @@ export function PaymentOption({ cards, handlePayment }: PaymentOptionProps) {
         </Heading>
 
         <S.CardItem>
-          <S.RadioGroupRoot>
+          <S.RadioGroupRoot
+            aria-label="Payment card options"
+            value={value}
+            onValueChange={handleValueChange}
+          >
             {cards &&
               cards.map((card) => (
                 <S.ItemWrapper key={card.number}>
-                  <label htmlFor={card.number}>
+                  <S.Label htmlFor={card.number}>
                     <img src={card.img} alt={card.flag} />
                     {card.number}
-                  </label>
+                  </S.Label>
 
-                  <S.RadioGroupItem value={card.number}>
+                  <S.RadioGroupItem value={card.number} id={card.number}>
                     <S.RadioGroupIndicator />
                   </S.RadioGroupItem>
                 </S.ItemWrapper>
@@ -46,11 +57,16 @@ export function PaymentOption({ cards, handlePayment }: PaymentOptionProps) {
       </S.Body>
 
       <S.Footer>
-        <Button as="a" fullWidth minimal>
+        <Button as="a" minimal fullWidth>
           Continue shopping
         </Button>
 
-        <Button fullWidth icon={<ShoppingCart />} onClick={handlePayment}>
+        <Button
+          icon={<ShoppingCart />}
+          onClick={handlePayment}
+          fullWidth
+          disabled={value.length >= 1 ? false : true}
+        >
           Buy now
         </Button>
       </S.Footer>
