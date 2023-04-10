@@ -188,7 +188,6 @@ exports[`<FormSignIn /> should render the form 1`] = `
             <input
               aria-label="Email input"
               class="c4"
-              id="Email"
               name="email"
               placeholder="Email"
               type="email"
@@ -238,7 +237,6 @@ exports[`<FormSignIn /> should render the form 1`] = `
             <input
               aria-label="Password input"
               class="c4"
-              id="Password"
               name="password"
               placeholder="Password"
               type="password"

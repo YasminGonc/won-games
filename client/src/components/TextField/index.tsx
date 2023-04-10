@@ -13,6 +13,7 @@ export type TextFieldProps = {
 export function TextField({
   label,
   placeholder,
+  name,
   icon,
   iconPosition = 'left',
   disabled = false,
@@ -27,18 +28,19 @@ export function TextField({
 
   return (
     <S.Wrapper disabled={disabled} error={!!error}>
-      {!!label && <S.Label htmlFor={placeholder}>{label}</S.Label>}
+      {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
 
       <S.InputWrapper iconPosition={iconPosition}>
         {icon}
         <S.Input
           type="text"
-          id={placeholder}
           placeholder={placeholder}
           aria-label={`${placeholder} input`}
           onChange={handleOnChangeValue}
           value={value}
           disabled={disabled}
+          name={name}
+          {...(label ? { id: name } : {})}
           {...props}
         />
       </S.InputWrapper>

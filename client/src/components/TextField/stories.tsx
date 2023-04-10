@@ -7,6 +7,7 @@ export default {
   component: TextField,
   args: {
     placeholder: 'Name',
+    name: 'name',
     disabled: false
   },
   argTypes: {
