@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileMenu /> should render the menu 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 0.1rem solid #EAEAEA;
+}
+
+.c1 {
+  font-size: 1.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 1.6rem;
+  -webkit-transition: background,color,0.3s ease-in-out;
+  transition: background,color,0.3s ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.6rem;
+  background: #FAFAFA;
+  color: #030517;
+}
+
+.c1:hover {
+  background: #F231A5;
+  color: #FAFAFA;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 0;
+  }
+
+  .c0 a:not(:last-child) {
+    border-bottom: 0.1rem solid #EAEAEA;
+  }
+}
+
+@media (max-width:768px) {
+  .c1 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .c1 > span {
+    display: none;
+  }
+}
+
+<nav
+  class="c0"
+>
+  <a
+    class="c1"
+    href="/profile/me"
+    title="My profile"
+  >
+    <svg
+      fill="currentColor"
+      height="24"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <circle
+        cx="128"
+        cy="128"
+        fill="none"
+        r="96"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+      <circle
+        cx="128"
+        cy="120"
+        fill="none"
+        r="40"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+      <path
+        d="M63.8,199.4a72,72,0,0,1,128.4,0"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+    <span>
+      My profile
+    </span>
+  </a>
+  <a
+    class="c1"
+    href="/profile/cards"
+    title="My cards"
+  >
+    <svg
+      fill="currentColor"
+      height="24"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <rect
+        fill="none"
+        height="144"
+        rx="8"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        width="208"
+        x="24"
+        y="56"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="168"
+        x2="200"
+        y1="168"
+        y2="168"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="120"
+        x2="136"
+        y1="168"
+        y2="168"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="24"
+        x2="232"
+        y1="96.9"
+        y2="96.9"
+      />
+    </svg>
+    <span>
+      My cards
+    </span>
+  </a>
+  <a
+    class="c1"
+    href="/profile/orders"
+    title="My orders"
+  >
+    <svg
+      fill="currentColor"
+      height="24"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="88"
+        x2="216"
+        y1="64"
+        y2="64"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="88"
+        x2="216"
+        y1="128"
+        y2="128"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="88"
+        x2="216"
+        y1="192"
+        y2="192"
+      />
+      <circle
+        cx="44"
+        cy="64"
+        r="12"
+      />
+      <circle
+        cx="44"
+        cy="128"
+        r="12"
+      />
+      <circle
+        cx="44"
+        cy="192"
+        r="12"
+      />
+    </svg>
+    <span>
+      My orders
+    </span>
+  </a>
+  <a
+    class="c1"
+    href="/logout"
+    title="Sign out"
+  >
+    <svg
+      fill="currentColor"
+      height="24"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="none"
+        height="256"
+        width="256"
+      />
+      <polyline
+        fill="none"
+        points="174 86 216 128 174 170"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+      <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        x1="104"
+        x2="216"
+        y1="128"
+        y2="128"
+      />
+      <path
+        d="M104,216H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h56"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+      />
+    </svg>
+    <span>
+      Sign out
+    </span>
+  </a>
+</nav>
+`;
