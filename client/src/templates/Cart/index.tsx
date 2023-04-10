@@ -11,6 +11,7 @@ import {
   PaymentOption,
   PaymentOptionProps
 } from '../../components/PaymentOptions'
+import { Empty } from '../../components/Empty'
 
 import { Base } from '../Base'
 
@@ -34,11 +35,19 @@ export function Cart({
           My cart
         </Heading>
 
-        <S.Content>
-          <CartList items={items} total={total} />
+        {items.length ? (
+          <S.Content>
+            <CartList items={items} total={total} />
 
-          <PaymentOption cards={cards} />
-        </S.Content>
+            <PaymentOption cards={cards} />
+          </S.Content>
+        ) : (
+          <Empty
+            title="Your cart is empty"
+            description="Go back to the store and explore great games and offers"
+            hasLink
+          />
+        )}
 
         <Divider />
       </Container>

@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import '../../../.jest/match-media-mock'
 import { renderWithTheme } from '../../utils/tests/helpers'
 import { screen } from '@testing-library/react'
@@ -18,15 +17,6 @@ const props: CartProps = {
   cards: paymentOptionsMock
 }
 
-jest.mock('../Base', () => {
-  return {
-    __esModule: true,
-    Base: ({ children }: { children: ReactNode }) => {
-      return <div data-testid="Mock Base">{children}</div>
-    }
-  }
-})
-
 jest.mock('../../components/ShowCase', () => {
   return {
     __esModule: true,
@@ -36,20 +26,29 @@ jest.mock('../../components/ShowCase', () => {
   }
 })
 
-jest.mock('../../components/CartList', () => {
+jest.mock('../../components/PaymentOptions', () => {
   return {
     __esModule: true,
-    CartList: () => {
-      return <div data-testid="Mock Cart"></div>
+    PaymentOption: () => {
+      return <div data-testid="Mock Payment"></div>
     }
   }
 })
 
-jest.mock('../../components/PaymentOptions', () => {
+jest.mock('../../components/CartList', () => {
   return {
     __esModule: true,
-    PaymentOptions: () => {
-      return <div data-testid="Mock PaymentOptions"></div>
+    CartList: () => {
+      return <div data-testid="Mock CartList"></div>
+    }
+  }
+})
+
+jest.mock('../../components/Empty', () => {
+  return {
+    __esModule: true,
+    Empty: () => {
+      return <div data-testid="Mock Empty"></div>
     }
   }
 })
@@ -61,6 +60,15 @@ describe('<Cart />', () => {
     expect(
       screen.getByRole('heading', { name: /my cart/i })
     ).toBeInTheDocument()
-    expect(screen.getByTestId('Mock Cart')).toBeInTheDocument()
+
+    expect(screen.getByTestId('Mock CartList')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock Payment')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock ShowCase')).toBeInTheDocument()
+  })
+
+  it('should render empty section if there are no items', () => {
+    renderWithTheme(<Cart {...props} items={[]} />)
+
+    expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
   })
 })
