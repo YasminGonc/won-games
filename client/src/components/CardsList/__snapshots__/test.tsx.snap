@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardsList /> should render 4 columns topics 1`] = `
+.c1 {
+  color: #030517;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 3.2rem;
+  font-size: 1.6rem;
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 5rem;
+  border-bottom: 0.5rem solid #F231A5;
+}
+
+.c1::after {
+  width: 3rem;
+}
+
+.c0 {
+  background-color: #FAFAFA;
+  padding: 2.4rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  background-color: #EAEAEA;
+  padding: 0.8rem 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+    color="black"
+  >
+    My cards
+  </h2>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <img
+        alt="visa"
+        src="/img/visa.png"
+      />
+      **** **** **** 4325
+    </div>
+    <div
+      class="c3"
+    >
+      <img
+        alt="mastercard"
+        src="/img/mastercard.png"
+      />
+      **** **** **** 4326
+    </div>
+  </div>
+</div>
+`;
