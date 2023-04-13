@@ -3,7 +3,7 @@ import * as S from './styles'
 import { CreditCard, ListBullets, SignOut, UserCircle } from 'phosphor-react'
 
 export type ProfileMenuProps = {
-  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders'
+  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders' | string
 }
 
 export function ProfileMenu({ activeLink }: ProfileMenuProps) {
