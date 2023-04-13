@@ -2,7 +2,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { ProfileMenu, ProfileMenuProps } from '.'
 
 export default {
-  title: 'ProfileMenu',
+  title: 'Profile/ProfileMenu',
   component: ProfileMenu,
   args: {
     activeLink: '/profile/me'
