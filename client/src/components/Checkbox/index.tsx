@@ -6,14 +6,16 @@ export type CheckboxProps = {
   label: string
   labelFor?: string
   labelColor?: 'black' | 'white'
+  isChecked?: boolean
 }
 
 export function Checkbox({
   label,
   labelFor = '',
-  labelColor = 'white'
+  labelColor = 'white',
+  isChecked = false
 }: CheckboxProps) {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(isChecked)
 
   function handleOnCheckedChange() {
     if (checked) {
