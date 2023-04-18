@@ -5,16 +5,26 @@ export type RadioGroupProps = {
   labelColor?: 'white' | 'black'
   defaultValue?: string
   name?: string
+  onChange?: (value: string) => void
 }
 
 export function RadioGroup({
   items,
   labelColor = 'white',
   defaultValue,
-  name
+  name,
+  onChange
 }: RadioGroupProps) {
+  function handleValueChange(value: string) {
+    !!onChange && onChange(value)
+  }
+
   return (
-    <S.RadioGroupRoot name={name} defaultValue={defaultValue}>
+    <S.RadioGroupRoot
+      name={name}
+      defaultValue={defaultValue}
+      onValueChange={(value) => handleValueChange(value)}
+    >
       {items.map((item) => {
         return (
           <S.ItemWrapper key={item}>
