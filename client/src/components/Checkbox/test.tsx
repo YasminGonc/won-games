@@ -21,21 +21,31 @@ describe('<Checkbox />', () => {
     expect(screen.getByText('Under $50')).toHaveStyle({ color: '#030517' })
   })
 
-  it('should change the checked state when clicked', async () => {
-    renderWithTheme(<Checkbox label="Under $50" />)
+  it('should dispatch onCheck when status change', async () => {
+    const onCheck = jest.fn()
 
-    expect(screen.getByRole('checkbox')).not.toBeChecked()
+    renderWithTheme(<Checkbox label="Under $50" onCheck={onCheck} />)
 
-    userEvent.click(screen.getByRole('checkbox'))
-
-    await waitFor(() => {
-      expect(screen.getByRole('checkbox')).toBeChecked()
-    })
+    expect(onCheck).not.toHaveBeenCalled()
 
     userEvent.click(screen.getByRole('checkbox'))
 
     await waitFor(() => {
-      expect(screen.getByRole('checkbox')).not.toBeChecked()
+      expect(onCheck).toHaveBeenCalledTimes(1)
     })
+    expect(onCheck).toHaveBeenCalledWith(true)
+  })
+
+  it('should call onCheck with false if Checkbox is already checked', async () => {
+    const onCheck = jest.fn()
+
+    renderWithTheme(<Checkbox label="Under $50" onCheck={onCheck} isChecked />)
+
+    userEvent.click(screen.getByRole('checkbox'))
+
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1)
+    })
+    expect(onCheck).toHaveBeenCalledWith(false)
   })
 })

@@ -7,29 +7,30 @@ export type CheckboxProps = {
   labelFor?: string
   labelColor?: 'black' | 'white'
   isChecked?: boolean
+  onCheck?: (status: boolean) => void
 }
 
 export function Checkbox({
   label,
   labelFor = '',
   labelColor = 'white',
-  isChecked = false
+  isChecked = false,
+  onCheck
 }: CheckboxProps) {
   const [checked, setChecked] = useState(isChecked)
 
-  function handleOnCheckedChange() {
-    if (checked) {
-      setChecked(false)
-    } else {
-      setChecked(true)
-    }
+  function onChange() {
+    const status = !checked
+    setChecked(status)
+
+    !!onCheck && onCheck(status)
   }
 
   return (
     <S.Wrapper>
       <S.CheckboxRoot
         id={labelFor}
-        onCheckedChange={handleOnCheckedChange}
+        onCheckedChange={onChange}
         checked={checked}
       >
         <S.CheckboxIndicator>
