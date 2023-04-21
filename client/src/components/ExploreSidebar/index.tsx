@@ -37,11 +37,13 @@ export function ExploreSidebar({
   }
 
   function handleFilter() {
+    setIsOpen(false)
     onFilter(values)
   }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper isOpen={isOpen}>
+      <S.Overlay aria-hidden={isOpen} />
       <S.IconWrapper>
         <FunnelSimple
           size={24}
@@ -55,9 +57,9 @@ export function ExploreSidebar({
         />
       </S.IconWrapper>
 
-      <S.Content isOpen={isOpen}>
+      <S.Content>
         {items.map((item) => (
-          <div key={item.title}>
+          <S.Items key={item.title}>
             <Heading bottomBorder lineColor="secondary" size="small">
               {item.title}
             </Heading>
@@ -85,13 +87,15 @@ export function ExploreSidebar({
                 onChange={(value) => handleCheckChange(item.name!, value)}
               />
             )}
-          </div>
+          </S.Items>
         ))}
+      </S.Content>
 
+      <S.Footer>
         <Button fullWidth size="medium" onClick={handleFilter}>
           Filter
         </Button>
-      </S.Content>
+      </S.Footer>
     </S.Wrapper>
   )
 }
