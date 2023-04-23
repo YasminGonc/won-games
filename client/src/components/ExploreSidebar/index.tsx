@@ -7,7 +7,7 @@ import { Checkbox } from '../Checkbox'
 import { Heading } from '../Heading'
 import { RadioGroup } from '../RadioGroup'
 
-type ItemProps = {
+export type ItemProps = {
   title: string
   name?: string
   type: 'radio' | 'checkbox'
