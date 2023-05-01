@@ -181,7 +181,9 @@ exports[`<Footer /> should render the cart list 1`] = `
   <div
     class="c6"
   >
-    Total: 
+    <span>
+      Total:
+    </span>
     <span
       class="c7"
     >

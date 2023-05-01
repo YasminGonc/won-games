@@ -13,4 +13,10 @@ describe('<Footer />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render the button', () => {
+    renderWithTheme(<CartList {...cartListMock} hasButton />)
+
+    expect(screen.getByText(/buy it now/i)).toBeInTheDocument()
+  })
 })
