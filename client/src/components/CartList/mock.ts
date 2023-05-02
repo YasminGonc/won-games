@@ -1,6 +1,4 @@
-import { CartListProps } from '.'
-
-export const cartListMock: CartListProps = {
+export const cartListMock = {
   items: [
     {
       img: 'https://source.unsplash.com/user/willianjusten/151x70',
