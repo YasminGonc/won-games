@@ -13,3 +13,9 @@ export default {
 } as Meta<MenuProps>
 
 export const Default: StoryObj<MenuProps> = {}
+
+export const Logged: StoryObj<MenuProps> = {}
+
+Logged.args = {
+  username: 'John'
+}

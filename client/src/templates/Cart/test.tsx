@@ -61,7 +61,7 @@ describe('<Cart />', () => {
       screen.getByRole('heading', { name: /my cart/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByTestId('Mock CartList')).toBeInTheDocument()
+    expect(screen.queryAllByTestId('Mock CartList')).toHaveLength(2)
     expect(screen.getByTestId('Mock Payment')).toBeInTheDocument()
     expect(screen.getByTestId('Mock ShowCase')).toBeInTheDocument()
   })
