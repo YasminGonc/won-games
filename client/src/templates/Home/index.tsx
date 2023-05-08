@@ -10,6 +10,7 @@ import { ShowCase } from '../../components/ShowCase'
 import * as S from './styles'
 
 export type HomeTemplateProps = {
+  data: any
   banners: BannerProps[]
   newGames: GameCardProps[]
   mostPopularHighlight: HighlightProps

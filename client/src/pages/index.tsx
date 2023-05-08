@@ -1,40 +1,34 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql
-} from '@apollo/client'
+import { gql } from '@apollo/client'
 
 import { Home, HomeTemplateProps } from '../templates/Home'
 import bannersMock from '../components/BannerSlider/mock'
 import gamesMock from '../components/GameCardSlider/mock'
 import highlightMock from '../components/Highlight/mock'
+import { initializeApollo } from '@/utils/apollo'
+
+const GET_GAMES = gql`
+  query getGames {
+    games {
+      name
+    }
+  }
+`
 
 export default function Index(props: HomeTemplateProps) {
-  const client = new ApolloClient({
-    uri: 'http://localhost:1337/graphql',
-    cache: new InMemoryCache()
-  })
-
-  client.query({
-    query: gql`
-      query getGames {
-        games {
-          name
-        }
-      }
-    `
-  })
+  if (props.data) return <p>{JSON.stringify(props.data, null, 2)}</p>
 
   return <Home {...props} />
 }
 
-export function getStaticProps() {
-  // faz lógica
-  // pode ser buscar dado em uma API ou cálculos
+export async function getStaticProps() {
+  const apolloClient = initializeApollo()
+
+  const { data } = await apolloClient.query({ query: GET_GAMES })
 
   return {
     props: {
+      data: data,
+      initialApolloState: apolloClient.cache.extract(),
       banners: bannersMock,
       newGames: gamesMock,
       mostPopularHighlight: highlightMock,
