@@ -11,6 +11,10 @@ export const Wrapper = styled.article<WrapperProps>`
     width: 100%;
     height: 100%;
     background-color: ${theme.colors.white};
+
+    a {
+      text-decoration: none;
+    }
   `}
 `
 
