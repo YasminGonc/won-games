@@ -4,8 +4,8 @@ import { Heading } from '../Heading'
 import { MediaMatch } from '../MediaMatch'
 import { AppleLogo, LinuxLogo, WindowsLogo } from 'phosphor-react'
 
-type Platform = 'windowns' | 'linux' | 'mac'
-type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
+type Platform = 'windows' | 'linux' | 'mac'
+type Rating = 'FREE' | 'pegi3' | 'pegi7' | 'pegi12' | 'pegi16' | 'pegi18'
 
 export type GameDetailsProps = {
   developer: string
@@ -27,7 +27,7 @@ export function GameDetails({
   const platformIcons = {
     linux: <LinuxLogo weight="fill" size={18} aria-label="Linux" />,
     mac: <AppleLogo weight="fill" size={18} aria-label="Mac" />,
-    windowns: <WindowsLogo weight="fill" size={18} aria-label="Windowns" />
+    windows: <WindowsLogo weight="fill" size={18} aria-label="Windowns" />
   }
 
   return (
@@ -72,7 +72,7 @@ export function GameDetails({
         <S.Block>
           <S.Label>Rating</S.Label>
           <S.Description>
-            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}
+            {rating === 'FREE' ? 'FREE' : `${rating.replace('pegi', '')}+`}
           </S.Description>
         </S.Block>
 

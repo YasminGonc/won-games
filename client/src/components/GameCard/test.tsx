@@ -8,7 +8,7 @@ const props = {
   title: 'Population Zero',
   developer: 'Rockstar Games',
   img: '/img/population-zero.png',
-  price: '$215,00'
+  price: 215
 }
 
 describe('<GameCard />', () => {
@@ -39,7 +39,7 @@ describe('<GameCard />', () => {
   it('should render prince in label', () => {
     renderWithTheme(<GameCard {...props} />)
 
-    const price = screen.getByText(props.price)
+    const price = screen.getByText('$215.00')
 
     expect(price).toHaveStyle({
       backgroundColor: '#3CD3C1'
@@ -48,13 +48,13 @@ describe('<GameCard />', () => {
   })
 
   it('should render promotional price', () => {
-    renderWithTheme(<GameCard {...props} promotionPrice="$ 100,00" />)
+    renderWithTheme(<GameCard {...props} promotionPrice={100} />)
 
-    expect(screen.getByText('$ 100,00')).toHaveStyle({
+    expect(screen.getByText('$100.00')).toHaveStyle({
       backgroundColor: '#3CD3C1'
     })
 
-    expect(screen.getByText(props.price)).toHaveStyle({
+    expect(screen.getByText('$215.00')).toHaveStyle({
       textDecoration: 'line-through'
     })
   })

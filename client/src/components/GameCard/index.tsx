@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import formatPrice from '../../utils/format-price'
 import { HeartStraight, ShoppingCart } from 'phosphor-react'
+
 import Button from '../Button'
 import { Ribbon, RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
@@ -9,8 +11,8 @@ export type GameCardProps = {
   title: string
   developer: string
   img: string
-  price: string
-  promotionPrice?: string
+  price: number
+  promotionPrice?: number
   favorite?: boolean
   onFav?: () => void
   hasRibbon?: boolean
@@ -63,8 +65,10 @@ export function GameCard({
         </S.FavButton>
 
         <S.PriceBox>
-          {!!promotionPrice && <S.Price isPromotional>{price}</S.Price>}
-          <S.Price>{promotionPrice || price}</S.Price>
+          {!!promotionPrice && (
+            <S.Price isPromotional>{formatPrice(price)}</S.Price>
+          )}
+          <S.Price>{formatPrice(promotionPrice || price)}</S.Price>
           <Button icon={<ShoppingCart />} size="small" />
         </S.PriceBox>
       </S.Content>

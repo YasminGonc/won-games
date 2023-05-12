@@ -9,7 +9,7 @@ export default {
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: '/img/population-zero.png',
-    price: '$ 215,00',
+    price: 215,
     favorite: false,
     hasRibbon: false,
     ribbon: '20% OFF',
@@ -38,7 +38,7 @@ export const promotionalCard: StoryObj<GameCardProps> = {
 }
 
 promotionalCard.args = {
-  promotionPrice: '$ 100,00'
+  promotionPrice: 100
 }
 
 export const withRibbon: StoryObj<GameCardProps> = {
@@ -51,5 +51,5 @@ export const withRibbon: StoryObj<GameCardProps> = {
 
 withRibbon.args = {
   hasRibbon: true,
-  promotionPrice: '$ 100,00'
+  promotionPrice: 100
 }
