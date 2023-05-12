@@ -53,12 +53,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         price: game.price,
         description: game.short_description
       },
-      gallery: game.gallery,
+      gallery: game.gallery.map((image) => ({
+        src: `http://localhost:1337${image.src}`,
+        label: image.label
+      })),
       description: game.description,
       details: {
         developer: game.developers[0].name,
         publisher: game.publisher.name,
-        platforms: ['mac'],
+        platforms: game.platforms.map((platform) =>
+          platform.name.toLowerCase()
+        ),
         realeaseDate: game.realease_date,
         rating: game.rating,
         genres: game.categories.map((category) => category.name)
