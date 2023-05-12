@@ -12,6 +12,11 @@ type Categories = {
   name: string
 }
 
+type Gallery = {
+  src: string
+  label: string
+}
+
 type Game = {
   name: string
   slug: string
@@ -33,10 +38,7 @@ type QueryGameBySlug = {
   price: number
   rating?: Rating
   realease_date?: Date
-  gallery: {
-    src: string
-    label: string
-  }
+  gallery: Gallery[]
   cover?: {
     src: string
   }

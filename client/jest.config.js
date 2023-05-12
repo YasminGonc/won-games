@@ -16,7 +16,9 @@ const customJestConfig = {
     'src/**/*.ts(x)?',
     '!src/**/stories.tsx',
     '!src/pages/**/*.tsx',
-    '!src/styles/**/*.ts'
+    '!src/styles/**/*.ts',
+    '!src/utils/apollo.ts',
+    '!src/@types/**/*.ts'
   ]
 }
 
