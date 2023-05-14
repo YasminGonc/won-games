@@ -7,6 +7,7 @@ import GameCardSliderMock from '@/components/GameCardSlider/mock'
 import HighlighMock from '@/components/Highlight/mock'
 import { Game, GameTemplateProps } from '@/templates/Game'
 import { GetStaticProps } from 'next'
+import { Loading } from '@/components/Loading'
 
 const apolloClient = initializeApollo()
 
@@ -14,7 +15,7 @@ export default function Index(props: GameTemplateProps) {
   const router = useRouter()
 
   // se a rota não tiver sido gerada pode mostrar um loading
-  if (router.isFallback) return null
+  if (router.isFallback) return <Loading />
 
   return <Game {...props} />
 }
