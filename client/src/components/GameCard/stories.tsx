@@ -9,7 +9,7 @@ export default {
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: '/img/population-zero.png',
-    price: 215,
+    price: 0,
     favorite: false,
     hasRibbon: false,
     ribbon: '20% OFF',
