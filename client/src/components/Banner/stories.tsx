@@ -9,10 +9,7 @@ export default {
     title: 'Defy death',
     subtitle: '<p>Play the new <strong>CrashLands</strong> season',
     buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death',
-    hasRibbon: false,
-    ribbon: 'My Ribbon',
-    ribbonSize: 'normal'
+    buttonLink: '/games/defy-death'
   },
   parameters: {
     layout: 'fullscreen'
@@ -36,5 +33,6 @@ export const WithRibbon: StoryObj<BannerProps> = {
 }
 
 WithRibbon.args = {
-  hasRibbon: true
+  ribbon: 'My Ribbon',
+  ribbonSize: 'normal'
 }

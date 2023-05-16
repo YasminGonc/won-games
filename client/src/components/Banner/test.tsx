@@ -35,7 +35,6 @@ describe('<Banner />', () => {
     renderWithTheme(
       <Banner
         {...props}
-        hasRibbon
         ribbon="My Ribbon"
         ribbonSize="small"
         ribbonColor="secondary"

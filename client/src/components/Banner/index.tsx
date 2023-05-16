@@ -8,7 +8,6 @@ export type BannerProps = {
   subtitle: string
   buttonLabel: string
   buttonLink: string
-  hasRibbon?: boolean
   ribbon?: string
   ribbonSize?: RibbonSizes
   ribbonColor?: RibbonColors
@@ -20,13 +19,12 @@ export function Banner({
   subtitle,
   buttonLabel,
   buttonLink,
-  hasRibbon = false,
   ribbon,
   ribbonSize = 'normal',
   ribbonColor
 }: BannerProps) {
   return (
-    <S.Wrapper hasRibbon={hasRibbon}>
+    <S.Wrapper hasRibbon={!!ribbon}>
       <S.Img src={img} role="img" aria-label={title} />
 
       <S.Caption>
@@ -37,7 +35,7 @@ export function Banner({
         </Button>
       </S.Caption>
 
-      {hasRibbon && (
+      {!!ribbon && (
         <Ribbon size={ribbonSize} color={ribbonColor}>
           {ribbon}
         </Ribbon>

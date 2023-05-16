@@ -5,7 +5,6 @@ export default [
     subtitle: '<p>Play the new <strong>CrashLands</strong> season</p>',
     buttonLabel: 'Buy now',
     buttonLink: '/games/defy-death',
-    hasRibbon: true,
     ribbon: 'Bestselling'
   },
   {
