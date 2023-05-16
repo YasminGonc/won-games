@@ -53,3 +53,24 @@ type QueryGameBySlug = {
 export type QueryGamesBySlug = {
   games: QueryGameBySlug[]
 }
+
+type Banner = {
+  image?: {
+    url: string
+  }
+  title: string
+  subtitle: string
+  button: {
+    label: string
+    link: string
+  }
+  ribbon?: {
+    text: string
+    color: 'primary' | 'secondary'
+    size: 'small' | 'normal'
+  }
+}
+
+export type QueryHome = {
+  banners: Banner[]
+}
