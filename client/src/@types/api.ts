@@ -20,7 +20,7 @@ type Gallery = {
 type Game = {
   name: string
   slug: string
-  cover: {
+  cover?: {
     url: string
   }
   developers: Developers[]
@@ -71,6 +71,38 @@ type Banner = {
   }
 }
 
+type Highlight = {
+  title: string
+  subtitle: string
+  background: {
+    url: string
+  }
+  floatImage?: {
+    url: string
+  }
+  buttonLabel: string
+  buttonLink: string
+  alignment?: 'right' | 'left'
+}
+
+type HomeSection = {
+  title: string
+  highlight: Highlight
+}
+
 export type QueryHome = {
   banners: Banner[]
+  newGames: Game[]
+  upcomingGames: Game[]
+  freeGames: Game[]
+  sections: {
+    newGames: HomeSection
+    popularGames: {
+      title: string
+      highlight: Highlight
+      games: Game[]
+    }
+    upcomingGames: HomeSection
+    freeGames: HomeSection
+  }
 }
