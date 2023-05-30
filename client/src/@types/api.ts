@@ -17,7 +17,7 @@ type Gallery = {
   label: string
 }
 
-type Game = {
+export type Game = {
   name: string
   slug: string
   cover?: {
@@ -54,7 +54,7 @@ export type QueryGamesBySlug = {
   games: QueryGameBySlug[]
 }
 
-type Banner = {
+export type Banner = {
   image?: {
     url: string
   }
@@ -71,7 +71,7 @@ type Banner = {
   }
 }
 
-type Highlight = {
+export type Highlight = {
   title: string
   subtitle: string
   background: {
