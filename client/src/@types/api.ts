@@ -106,3 +106,13 @@ export type QueryHome = {
     freeGames: HomeSection
   }
 }
+
+export type QueryRecommended = {
+  recommended: {
+    section: {
+      title?: string
+      highlight: Highlight
+      games: Game[]
+    }
+  }
+}
