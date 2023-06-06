@@ -16,12 +16,14 @@ import { Empty } from '../../components/Empty'
 import { Base } from '../Base'
 
 export type CartProps = {
+  recommendedTitle?: string
   recomendedGames: GameCardProps[]
   recomendedHighlight: HighlightProps
 } & CartListProps &
   PaymentOptionProps
 
 export function Cart({
+  recommendedTitle,
   recomendedGames,
   recomendedHighlight,
   items,
@@ -53,7 +55,7 @@ export function Cart({
       </Container>
 
       <ShowCase
-        title="You may like these games"
+        title={recommendedTitle || 'You may like these games'}
         games={recomendedGames}
         highlight={recomendedHighlight}
       />
