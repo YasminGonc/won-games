@@ -18,7 +18,8 @@ export type GameTemplateProps = {
   details: GameDetailsProps
   upcomingGames: GameCardProps[]
   upcomingHighlight: HighlightProps
-  recommendeGames: GameCardProps[]
+  recommendedTitle?: string
+  recommendedGames: GameCardProps[]
 }
 
 export function Game({
@@ -29,7 +30,8 @@ export function Game({
   details,
   upcomingGames,
   upcomingHighlight,
-  recommendeGames
+  recommendedTitle,
+  recommendedGames
 }: GameTemplateProps) {
   return (
     <Base>
@@ -59,7 +61,10 @@ export function Game({
           highlight={upcomingHighlight}
         />
 
-        <ShowCase title="You may like this games" games={recommendeGames} />
+        <ShowCase
+          title={recommendedTitle || 'You may like this games'}
+          games={recommendedGames}
+        />
       </S.Main>
     </Base>
   )

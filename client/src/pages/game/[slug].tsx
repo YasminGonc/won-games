@@ -1,13 +1,16 @@
 import { useRouter } from 'next/router'
+import { GetStaticProps } from 'next'
+
 import { initializeApollo } from '@/utils/apollo'
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from '@/graphql/queries/games'
 import { QueryGames, QueryGamesBySlug } from '@/@types/api'
+import { QueryRecommended } from '@/@types/api'
+import { QUERY_RECOMMENDED } from '@/graphql/queries/recommended'
 
 import GameCardSliderMock from '@/components/GameCardSlider/mock'
 import HighlighMock from '@/components/Highlight/mock'
 import { Game, GameTemplateProps } from '@/templates/Game'
-import { GetStaticProps } from 'next'
-// import { Loading } from '@/components/Loading'
+import { gamesMapper } from '@/utils/mappers'
 
 const apolloClient = initializeApollo()
 
@@ -34,6 +37,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // get game data
   const { data } = await apolloClient.query<QueryGamesBySlug>({
     query: QUERY_GAME_BY_SLUG,
     variables: { slug: `${params?.slug}` }
@@ -44,6 +48,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const game = data.games[0]
+
+  // get recommended games
+  const { data: recommended } = await apolloClient.query<QueryRecommended>({
+    query: QUERY_RECOMMENDED
+  })
 
   return {
     props: {
@@ -71,7 +80,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       upcomingGames: GameCardSliderMock,
       upcomingHighlight: HighlighMock,
-      recommendeGames: GameCardSliderMock
+      recommendedTitle: recommended.recommended.section.title,
+      recommendedGames: gamesMapper(recommended.recommended.section.games)
     }
   }
 }
