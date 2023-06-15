@@ -116,3 +116,10 @@ export type QueryRecommended = {
     }
   }
 }
+
+export type QueryUpcoming = {
+  upcomingGames: Game[]
+  showcase: {
+    upcomingGames: HomeSection
+  }
+}
