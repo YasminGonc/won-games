@@ -1,5 +1,5 @@
 import * as S from './styles'
 
 export function Loading() {
-  return <S.Loader />
+  return <S.Loader>Loading...</S.Loader>
 }

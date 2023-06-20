@@ -3,7 +3,12 @@ import { Loading } from '.'
 
 export default {
   title: 'Loading',
-  component: Loading
+  component: Loading,
+  parameters: {
+    backgrounds: {
+      default: 'won-dark'
+    }
+  }
 } as Meta
 
 export const Default: StoryObj = {}
